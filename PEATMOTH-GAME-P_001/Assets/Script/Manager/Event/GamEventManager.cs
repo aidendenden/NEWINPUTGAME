@@ -19,7 +19,7 @@ public class GameEventManager : MonoBehaviour
     public delegate void TriggerEventHandler(string message, Transform _transform,Vector3 v);
 
     public static event TriggerEventHandler OnTrigger;
-
+    
 
     public void Triggered(string message, Transform _transform, Vector3 _vector3)
     {
@@ -46,6 +46,19 @@ public class GameEventManager : MonoBehaviour
         }
 
     }
+    
+    
+    //键盘输入事件
+    public delegate void keyboardEventHandler(KeyCode keyCode,Vector2 vector2);
+
+    public static event keyboardEventHandler OnKeyDown;
+    
+    public void OnKeyDowned(KeyCode keyCode,Vector2 vector2)
+    {
+        if (OnKeyDown != null)
+            OnKeyDown(keyCode, vector2);
+    }
+    
     
 }
 
