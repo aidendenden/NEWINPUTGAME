@@ -27,6 +27,14 @@ public class TouchSystem : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
+            //   foreach (char c in Input.inputString)
+            // {
+            //     // 获取按下的键的ASCII码值
+            //     int asciiCode = (int)c;
+            //     GameEventManager.Instance.OnKeyDowned((KeyCode)asciiCode, GetScreenCoordinates((KeyCode)asciiCode));
+
+            // }
+
             foreach (KeyCode keyCode in System.Enum.GetValues(typeof(GameKeyCode)))
             {
                 if (Input.GetKeyDown(keyCode))

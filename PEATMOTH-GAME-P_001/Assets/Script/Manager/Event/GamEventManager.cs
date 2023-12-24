@@ -58,6 +58,13 @@ public class GameEventManager : MonoBehaviour
         if (OnKeyDown != null)
             OnKeyDown(keyCode, vector2);
     }
+
+      public void ClearEventListeners()
+    {
+        // 清空事件监听器
+        OnTrigger = null;
+        OnKeyDown = null;
+    }
     
     
 }
